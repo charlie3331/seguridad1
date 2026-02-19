@@ -44,6 +44,6 @@ export class Link {
   }
 
   abrirGithub() {
-    window.open('https://github.com/tu-usuario/tu-repositorio', '_blank');
+    window.open('https://github.com/charlie3331/seguridad1', '_blank');
   }
 }
