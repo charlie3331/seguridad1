@@ -1,0 +1,176 @@
+:host {
+  --black: #000000;
+  --dark-grey: #121212;
+  --yellow: #facc15;
+  --white: #ffffff;
+  display: block;
+  min-height: 100vh;
+  background-color: var(--black);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.cyber-card {
+  background: var(--dark-grey);
+  border: 2px solid var(--yellow);
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 25px rgba(250, 204, 21, 0.15);
+}
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: var(--yellow);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--yellow);
+}
+
+.status-text {
+  color: var(--yellow);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+}
+
+.title {
+  color: var(--white);
+  text-align: center;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.subtitle {
+  color: #666;
+  text-align: center;
+  font-size: 0.8rem;
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  color: var(--yellow);
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.yellow-input, .yellow-textarea, .yellow-select {
+  width: 100%;
+  background: #000;
+  border: 1px solid #333;
+  border-left: 3px solid var(--yellow);
+  padding: 12px;
+  color: var(--white);
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.yellow-input:focus, .yellow-textarea:focus {
+  outline: none;
+  border-color: var(--yellow);
+}
+
+.helper-text {
+  color: #555;
+  font-size: 0.7rem;
+  display: block;
+  margin-top: 5px;
+}
+
+.controls-row {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.yellow-btn {
+  flex: 1;
+  background: var(--yellow);
+  color: var(--black);
+  border: none;
+  padding: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.white-btn {
+  flex: 1;
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--white);
+  padding: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.yellow-btn:hover { background: var(--white); }
+.white-btn:hover { background: rgba(255,255,255,0.1); }
+
+.btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.result-box {
+  margin-top: 30px;
+  background: #000;
+  border: 1px solid var(--yellow);
+  padding: 20px;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  color: var(--yellow);
+  font-size: 0.7rem;
+  margin-bottom: 15px;
+}
+
+.copy-btn {
+  background: transparent;
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 0.65rem;
+}
+
+.result-text {
+  color: var(--white);
+  font-size: 1.2rem;
+  word-break: break-all;
+}
+
+.footer-links {
+  margin-top: 25px;
+  text-align: center;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+}
+
+.audit-link {
+  color: #444;
+  text-decoration: none;
+  font-size: 0.75rem;
+}
+
+.audit-link:hover { color: var(--yellow); }

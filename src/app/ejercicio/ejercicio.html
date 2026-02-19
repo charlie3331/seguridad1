@@ -1,0 +1,56 @@
+<div class="main-container">
+  <div class="cyber-card">
+    <div class="status-bar">
+      <span class="dot"></span>
+      <span class="status-text">CHENTE CRYPTO</span>
+    </div>
+
+    <h2 class="title">PRIMEROS PASOS</h2>
+    <p class="subtitle">CIFRADO CLASICO</p>
+
+    <div class="form-group">
+      <label>ALFABETO DE REFERENCIA</label>
+      <input type="text" [(ngModel)]="alfabeto" placeholder="EJ: abcdef123..." class="yellow-input">
+      <small class="helper-text">DEFINE EL CONJUNTO DE CARACTERES QUE EL SISTEMA RECONOCERA.</small>
+    </div>
+
+    <div class="form-group">
+      <label>MENSAJE A PROCESAR</label>
+      <textarea [(ngModel)]="textoOriginal" placeholder="ESCRIBA EL MENSAJE AQUI..." class="yellow-textarea"></textarea>
+    </div>
+
+    <div class="controls-row">
+      <div class="control-item">
+        <label>METODO</label>
+        <select [(ngModel)]="metodo" class="yellow-select">
+          <option value="cesar">CIFRADO CESAR</option>
+          <option value="atbash">CIFRADO ATBASH</option>
+        </select>
+      </div>
+
+      <div class="control-item" *ngIf="metodo === 'cesar'">
+        <label>DESPLAZAMIENTO</label>
+        <input type="number" [(ngModel)]="desplazamiento" min="1" class="yellow-input">
+      </div>
+    </div>
+
+    <div class="actions">
+      <button (click)="procesar('cifrar')" [disabled]="!textoOriginal" class="yellow-btn">
+        CIFRAR DATOS
+      </button>
+      <button (click)="procesar('descifrar')" [disabled]="!textoOriginal || metodo === 'atbash'" class="white-btn">
+        DESCIFRAR DATOS
+      </button>
+    </div>
+
+    <div class="result-box" *ngIf="resultado">
+      <div class="result-header">
+        <span>RESULTADO DEL PROCESAMIENTO</span>
+        <button class="copy-btn" (click)="copiarAlPortapapeles()">COPIAR</button>
+      </div>
+      <p class="result-text">{{ resultado }}</p>
+    </div>
+    
+   
+  </div>
+</div>

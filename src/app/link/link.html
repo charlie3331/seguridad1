@@ -1,0 +1,42 @@
+<div class="main-container">
+  <div class="cyber-card">
+    <div class="status-bar">
+      <span class="dot"></span>
+      <span class="status-text">SISTEMA DE AUDITORÍA ACTIVO</span>
+    </div>
+    
+    <h2 class="title"> La Odisea de César</h2>
+    
+    <div class="story-content">
+      <p class="story-text">
+        El <strong>Pequeño César</strong> busca su lugar en el mundo. Su viaje fue largo:
+        <br><br>
+        1. Primero llegó a un <strong>Hotel</strong> (bonito pero frío).<br>
+        2. Luego saltó a un <strong>Depa</strong> (pequeño y con mucha competencia).<br>
+        3. Se mudó a una <strong>Mansión</strong> (top, pero le quedaba grande).<br>
+        4. Intentó en un <strong>Penthouse</strong> (lujoso pero muy solitario).<br>
+        5. Finalmente llegó a la <strong>UAA</strong> y supo que ahí pertenecía.
+      </p>
+      <div class="terminal-hint">
+        > [RETO]: Yo se que tu puedes rey sino como consigues el código
+      </div>
+    </div>
+
+    <div class="input-wrapper">
+      <input type="text" [(ngModel)]="llave" placeholder="INGRESE CLAVE DE ACCESO" class="yellow-input">
+    </div>
+    
+    <button (click)="validar()" class="yellow-btn">
+      DESBLOQUEAR REPOSITORIO
+    </button>
+
+    <div *ngIf="autorizado" class="access-box">
+      <p class="access-text">ACCESO TOTAL CONCEDIDO</p>
+      <button (click)="abrirGithub()" class="github-link">
+        VER CÓDIGO EN GITHUB
+      </button>
+    </div>
+    
+    <a href="/" class="return-link">TERMINAR SESIÓN</a>
+  </div>
+</div>
