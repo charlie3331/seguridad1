@@ -1,17 +1,21 @@
 graph TD
     A([Inicio: monitor.py]) --> B[Captura de paquetes en la red]
-    B --> C{¿Se detecta IP / MAC origen?}
-    C -- Sí --> D{¿IP/MAC en whitelist.py?}
+    B --> C{¿Se detecta IP / MAC?}
+    
+    C -- Sí --> D{¿En whitelist.py?}
     C -- No --> B
-    D -- No --> E[Bloqueo Lógico / Registro de Intrusión]
-    E --> F[mailer.py: Enviar correo de Alerta a Admin]
-    F --> Z([Fin del ciclo de paquete])
-    D -- Sí --> G[logger.py: Registrar tráfico y consultas DNS]
-    G --> H{threatintel.py: ¿IP destino en Lista Negra?}
-    H -- Sí --> I[Detección de Amenaza / Virus]
-    I --> J[whois_lookup.py: Ejecutar consulta Forense/Abuse]
-    J --> K[mailer.py: Enviar Alerta de Emergencia + Reporte]
+    
+    D -- No --> E[Registro de Intrusión]
+    E --> F[mailer.py: Alerta Admin]
+    F --> Z([Fin])
+    
+    D -- Sí --> G[logger.py: Registrar DNS/HTTP]
+    G --> H{threatintel.py: ¿IP en Lista Negra?}
+    
+    H -- Sí --> I[Detección de Amenaza]
+    I --> J[whois_lookup.py: Consulta Forense]
+    J --> K[mailer.py: Alerta Emergencia]
     K --> Z
-    H -- No --> L[Tráfico limpio permitido]
+    
+    H -- No --> L[Tráfico permitido]
     L --> Z
-    Z -.-> M[(Actualización en Dashboard Web: app.py)]
