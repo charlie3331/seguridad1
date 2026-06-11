@@ -44,6 +44,6 @@ export class Link {
   }
 
   abrirGithub() {
-    window.open('https://github.com/charlie3331/seguridad1', '_blank');
+    window.open('https://github.com/oguzmarc14/guardIAn', '_blank');
   }
 }
